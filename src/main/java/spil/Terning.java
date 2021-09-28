@@ -4,7 +4,7 @@ public class Terning {
     private int værdi;
 
     public Terning(){
-        værdi = 1; //sæt standard værdi så null exception undgås
+        værdi = 1;
     }
     public void rul(){
         værdi = (int) (Math.random()*6)+1;
