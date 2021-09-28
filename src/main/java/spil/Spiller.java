@@ -30,6 +30,9 @@ public class Spiller {
     public int getSidste_slag() {
         return sidste_slag;
     }
+    public int[] getTerningØjne(){
+        return new int[]{t1.getVærdi(), t2.getVærdi()};
+    }
 
     public void setPoint(int point) {
         this.point = point;
