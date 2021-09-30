@@ -30,8 +30,13 @@ public class Spiller {
     public int getSidste_slag() {
         return sidste_slag;
     }
-    public int[] getTerningØjne(){
+    private int[] getTerningØjne(){
         return new int[]{t1.getVærdi(), t2.getVærdi()};
+    }
+
+    public int[] getStatus(){
+        int[] øjne = getTerningØjne();
+        return new int[]{øjne[0], øjne[1], getPoint()};
     }
 
     public void setPoint(int point) {
