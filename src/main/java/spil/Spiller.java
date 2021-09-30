@@ -47,7 +47,8 @@ public class Spiller {
         return slog_2_ens;
     }
 
-    public void incrementPoint(int point) {
-        this.point += point;
+    public void incrementPoint(int p) {
+        this.point += p;
+        if(point>40){point=40;}
     }
 }
