@@ -20,7 +20,7 @@ public class Spiller {
         t2.rul();
         int sum = t1.getVærdi() + t2.getVærdi();
         sidste_slag = sum;
-        slog_2_ens = t1.getVærdi() == t2.getVærdi();
+        slog_2_ens = t1.getVærdi() == t2.getVærdi();//Blev der slået 2 ens
         return sum;
     }
     public int getPoint() {
@@ -30,13 +30,9 @@ public class Spiller {
     public int getSidste_slag() {
         return sidste_slag;
     }
-    private int[] getTerningØjne(){
-        return new int[]{t1.getVærdi(), t2.getVærdi()};
-    }
 
     public int[] getStatus(){
-        int[] øjne = getTerningØjne();
-        return new int[]{øjne[0], øjne[1], getPoint()};
+        return new int[]{t1.getVærdi(), t2.getVærdi(), getPoint()}; //Staus, på terningslag og point
     }
 
     public void setPoint(int point) {
@@ -49,6 +45,6 @@ public class Spiller {
 
     public void incrementPoint(int p) {
         this.point += p;
-        if(point>40){point=40;}
+        if(point>40){point=40;} //Point kan ikke være over 40
     }
 }

@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 
+//Viser information til spiller og giver mulighed for at rulle
 public class SpillerGUI extends GridPane {
     private final Label spiller;
     private final Label point;

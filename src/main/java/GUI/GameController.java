@@ -29,6 +29,7 @@ public class GameController extends Application {
         setup_skærm(stage);
         setup_spil();
     }
+    //Set GUI'en op
     private void setup_skærm(Stage stage){
         s1_gui = new SpillerGUI("Spiller 1");
         s2_gui = new SpillerGUI("Spiller 2");
@@ -65,7 +66,8 @@ public class GameController extends Application {
     }
     public void håndterRul(ActionEvent e){
         try {
-            status_label.setText("Velkommen til spillet");
+            status_label.setText("Velkommen til spillet"); // Set info tekst til Velkommen...
+            //Tag tur for spiller og opdater GUI
             if (e.getSource() == s1_gui.getRulKnap()) {
                 spil.tag_tur(s1);
                 int[] status = s1.getStatus();
@@ -75,10 +77,12 @@ public class GameController extends Application {
                 int[] status = s2.getStatus();
                 s2_gui.opdater(status[0], status[1], status[2]);
             }
+            //Har vi en vinder?
             if(spil.vinder() != null){
                 String vinder = (spil.vinder() == s1) ? "Tillykke spiller 1" : "Tillykke spiller 2";
                 status_label.setText(vinder);
             }
+            //Håndter hvis spiller prøver at spille udenfor tur
         }catch (Exception excep){
             if(excep.getMessage().equals("Spiller udenfor tur")){
                 status_label.setText("Det er ikke din tur");
